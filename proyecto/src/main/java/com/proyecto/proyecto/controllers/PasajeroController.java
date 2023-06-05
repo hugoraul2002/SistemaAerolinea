@@ -18,7 +18,7 @@ public class PasajeroController {
 
     @GetMapping
     public ResponseEntity<List<PasajeroModel>> obtenerPersonas(){
-            List<PasajeroModel> lista =  pasajeroService.obtenerPersonas();
+            List<PasajeroModel> lista =  pasajeroService.obtenerPasajeros();
         return new ResponseEntity(lista, HttpStatus.OK);
     }
 

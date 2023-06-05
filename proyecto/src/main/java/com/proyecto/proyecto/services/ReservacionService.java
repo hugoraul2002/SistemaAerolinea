@@ -12,6 +12,10 @@ import java.util.List;
 public class ReservacionService {
     @Autowired
     ReservacionRepository reservacionRepository;
+    @Autowired
+    PasajeroService pasajeroService;
+    @Autowired
+    VueloService vueloService;
 
     public List<ReservacionModel> getReservaciones(){
         return reservacionRepository.findAll();
@@ -20,4 +24,5 @@ public class ReservacionService {
     public ReservacionModel saveReservacion(ReservacionModel reservacion){
         return reservacionRepository.save(reservacion);
     }
+
 }

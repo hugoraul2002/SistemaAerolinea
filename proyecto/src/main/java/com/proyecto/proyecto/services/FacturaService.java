@@ -20,7 +20,13 @@ public class FacturaService {
     public boolean existById(int id){
         return facturaRepository.existsById(id);
     }
-    public FacturaModel saveFactura(FacturaModel factura){
+    public FacturaModel save(FacturaModel factura){
         return facturaRepository.save(factura);
     }
+    public FacturaModel get(int id){ return facturaRepository.getById(id);}
+    public void deteleById(int id){
+        facturaRepository.deleteById(id);
+    }
+
+
 }

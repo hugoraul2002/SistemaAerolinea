@@ -16,6 +16,9 @@ public class AvionModel {
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
+    public AvionModel() {
+    }
+
     public AvionModel(int id, int asientos, String nombre) {
         this.id = id;
         this.asientos = asientos;
