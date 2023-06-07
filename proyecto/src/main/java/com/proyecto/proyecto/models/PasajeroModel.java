@@ -14,7 +14,7 @@ public class PasajeroModel {
     private int id;
 
     @Column(name = "nacimiento", nullable = false)
-    private LocalDateTime nacimiento;
+    private Date nacimiento;
 
     @Column(name = "nacionalidad", nullable = false)
     private String nacionalidad;

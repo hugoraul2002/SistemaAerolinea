@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/avion")
+@CrossOrigin("*")
 public class AvionController {
     @Autowired
     AvionService avionService;

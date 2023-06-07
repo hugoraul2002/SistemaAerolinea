@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/factura")
+@CrossOrigin("*")
 public class FacturaController {
     @Autowired
     FacturaService facturaService;

@@ -30,13 +30,13 @@ public class VueloModel {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private AvionModel avion;
 
-    public VueloModel(int id, String destino, LocalDateTime llegada, String origen, LocalDateTime salida, AvionModel avion) {
+    /*public VueloModel(int id, String destino, LocalDateTime llegada, String origen, LocalDateTime salida, AvionModel avion) {
         this.id = id;
         this.destino = destino;
         this.llegada = llegada;
         this.origen = origen;
         this.salida = salida;
         this.avion = avion;
-    }
+    }*/
 }
 

@@ -1,5 +1,6 @@
 package com.proyecto.proyecto.controllers;
 
+import com.proyecto.proyecto.dto.MensajeDTO;
 import com.proyecto.proyecto.models.AvionModel;
 import com.proyecto.proyecto.models.PasajeroModel;
 import com.proyecto.proyecto.services.PasajeroService;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pasajero")
+@CrossOrigin("*")
 public class PasajeroController {
     @Autowired
     PasajeroService pasajeroService;
@@ -25,6 +27,15 @@ public class PasajeroController {
     @PostMapping
     public PasajeroModel savePasajero(@RequestBody PasajeroModel pasajero){
         return pasajeroService.savePasajero(pasajero);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable("id") int id){
+        if(!pasajeroService.existById(id)){
+            return new ResponseEntity(new MensajeDTO("El registro no existe."), HttpStatus.NOT_FOUND);
+        }
+        pasajeroService.deteleById(id);
+        return new ResponseEntity(new MensajeDTO("El registro fue eliminado."), HttpStatus.OK);
     }
 
 }
